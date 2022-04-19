@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen.dart';
+import 'package:quiz_app/screens/read_section_one/read_section_one.dart';
 
 import 'screens/OnBoardingPage/onBoardingPage.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Tajawal',
         brightness: Brightness.dark,
       ),
-      home: OnBoardingPage(),
+      home: ReadSectionOne(),
       routes: {
         QuizScreen.path: (context) => QuizScreen(),
       },
