@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen.dart';
+import 'package:quiz_app/screens/read_section_one/read_section_one.dart';
 
 import '../../constants.dart';
 import '../../utils/scale_util.dart';
@@ -242,7 +243,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed(QuizScreen.path);
+                      Navigator.of(context).pushNamed(ReadSectionOne.path);
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(

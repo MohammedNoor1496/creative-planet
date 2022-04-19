@@ -5,6 +5,7 @@ import 'components/list_item.dart';
 import 'components/list_item_double.dart';
 
 class ReadSectionOne extends StatelessWidget {
+  static const path = 'read-section-one';
   const ReadSectionOne({Key key}) : super(key: key);
 
   @override

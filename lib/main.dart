@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Tajawal',
         brightness: Brightness.dark,
       ),
-      home: ReadSectionOne(),
+      home: OnBoardingPage(),
       routes: {
         QuizScreen.path: (context) => QuizScreen(),
+        ReadSectionOne.path: (context) => ReadSectionOne(),
       },
     );
   }
