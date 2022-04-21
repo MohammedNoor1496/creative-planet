@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen.dart';
 
 import '../../constants.dart';
 import 'components/list_item.dart';
@@ -48,9 +49,14 @@ class ReadSectionOne extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    List_item(
-                      name: 'الايقاع الصوتي',
-                      imagePath: 'assets/readphaseone/readphaseone1.png',
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(QuizScreen.path);
+                      },
+                      child: List_item(
+                        name: 'الايقاع الصوتي',
+                        imagePath: 'assets/readphaseone/readphaseone1.png',
+                      ),
                     ),
                     List_item(
                       name: 'اسم الإشارة',
