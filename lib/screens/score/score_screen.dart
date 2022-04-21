@@ -17,7 +17,7 @@ class ScoreScreen extends StatelessWidget {
             children: [
               Spacer(flex: 3),
               Text(
-                "Score",
+                "النتيجة",
                 style: Theme.of(context)
                     .textTheme
                     .headline3
@@ -29,6 +29,14 @@ class ScoreScreen extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headline4
+                    .copyWith(color: kSecondaryColor),
+              ),
+              Spacer(flex: 3),
+              Text(
+                "وفقك الله و رعاك",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
                     .copyWith(color: kSecondaryColor),
               ),
               Spacer(flex: 3),
