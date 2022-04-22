@@ -68,9 +68,20 @@ class _ReadSectionOneState extends State<ReadSectionOne> {
                         imagePath: 'assets/readphaseone/readphaseone1.png',
                       ),
                     ),
-                    List_item(
-                      name: 'اسم الإشارة',
-                      imagePath: 'assets/readphaseone/readphaseone2.png',
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          QuizScreen.path,
+                          arguments: {
+                            'sectionId': 2,
+                            'phaseId': 1,
+                          },
+                        );
+                      },
+                      child: List_item(
+                        name: 'اسم الإشارة',
+                        imagePath: 'assets/readphaseone/readphaseone2.png',
+                      ),
                     ),
                     List_item(
                       name: 'الكلمة الصحيحة',
