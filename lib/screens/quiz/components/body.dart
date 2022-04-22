@@ -8,10 +8,25 @@ import 'package:flutter_svg/svg.dart';
 import 'progress_bar.dart';
 import 'question_card.dart';
 
-class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
+class Body extends StatefulWidget {
+  final int sectionId;
+  final int phaseId;
+  Body({
+    @required this.sectionId,
+    @required this.phaseId,
+  });
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  @override
+  void initState() {
+    print('phase id  ${widget.phaseId}');
+    print('section id  ${widget.sectionId}');
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +37,7 @@ class Body extends StatelessWidget {
         SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
         SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
                 padding:
@@ -37,7 +52,7 @@ class Body extends StatelessWidget {
                   () => Text.rich(
                     TextSpan(
                       text:
-                          "Question ${_questionController.questionNumber.value}",
+                          "السؤال ${_questionController.questionNumber.value}",
                       style: Theme.of(context)
                           .textTheme
                           .headline4

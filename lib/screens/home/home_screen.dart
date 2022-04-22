@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen.dart';
 import 'package:quiz_app/screens/read_section_one/read_section_one.dart';
 
 import '../../constants.dart';
+import '../../store/myStore.dart';
 import '../../utils/scale_util.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
@@ -216,11 +218,18 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
+                    // onTap: () {
+                    //   AssetsAudioPlayer.newPlayer().open(
+                    //     Audio("assets/audios/error.mp3"),
+                    //     showNotification: true,
+                    //   );
+                    // },
                     onTap: () {
-                      AssetsAudioPlayer.newPlayer().open(
-                        Audio("assets/audios/error.mp3"),
-                        showNotification: true,
+                      var store = Provider.of<MyStore>(
+                        context,
+                        listen: false,
                       );
+                      store.getSetionPahesQuestions(1, 1);
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -243,7 +252,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed(ReadSectionOne.path);
+                      Navigator.of(context).pushNamed(
+                        ReadSectionOne.path,
+                      );
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(

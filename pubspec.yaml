@@ -35,6 +35,8 @@ dependencies:
   get: ^4.1.4
   introduction_screen: ^3.0.2
   assets_audio_player: ^3.0.4+1
+  provider: ^6.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

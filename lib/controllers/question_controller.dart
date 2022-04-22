@@ -21,12 +21,12 @@ class QuestionController extends GetxController
   List<Question> _questions = sample_data
       .map(
         (question) => Question(
-          id: question['id'],
-          question: question['question'],
-          options: question['options'],
-          answer: question['answer_index'],
-          section: question['section'],
-          phase: question['phase'],
+          id: question.id,
+          question: question.question,
+          options: question.options,
+          answer: question.answer,
+          section: question.section,
+          phase: question.phase,
         ),
       )
       .toList();

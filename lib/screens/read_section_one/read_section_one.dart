@@ -5,10 +5,14 @@ import '../../constants.dart';
 import 'components/list_item.dart';
 import 'components/list_item_double.dart';
 
-class ReadSectionOne extends StatelessWidget {
+class ReadSectionOne extends StatefulWidget {
   static const path = 'read-section-one';
-  const ReadSectionOne({Key key}) : super(key: key);
 
+  @override
+  State<ReadSectionOne> createState() => _ReadSectionOneState();
+}
+
+class _ReadSectionOneState extends State<ReadSectionOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +55,13 @@ class ReadSectionOne extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed(QuizScreen.path);
+                        Navigator.of(context).pushNamed(
+                          QuizScreen.path,
+                          arguments: {
+                            'sectionId': 1,
+                            'phaseId': 1,
+                          },
+                        );
                       },
                       child: List_item(
                         name: 'الايقاع الصوتي',
