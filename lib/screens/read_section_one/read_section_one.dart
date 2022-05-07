@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quiz_app/page/page_keys.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen_controller.dart';
 
 import '../../constants.dart';
 import 'components/list_item.dart';
 import 'components/list_item_double.dart';
 
-class ReadSectionOne extends StatefulWidget {
-  static const path = 'read-section-one';
-
-  @override
-  State<ReadSectionOne> createState() => _ReadSectionOneState();
-}
-
-class _ReadSectionOneState extends State<ReadSectionOne> {
+class ReadSectionOne extends GetView {
+  final quizScreenController = QuizScreenController.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +52,10 @@ class _ReadSectionOneState extends State<ReadSectionOne> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed(
-                          QuizScreen.path,
-                          arguments: {
-                            'sectionId': 1,
-                            'phaseId': 1,
-                          },
+                        quizScreenController.sectionId = 0;
+                        quizScreenController.phaseId = 0;
+                        Get.toNamed(
+                          PageKeys.quizScreen,
                         );
                       },
                       child: List_item(
@@ -70,11 +65,11 @@ class _ReadSectionOneState extends State<ReadSectionOne> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed(
-                          QuizScreen.path,
+                        Get.toNamed(
+                          PageKeys.quizScreen,
                           arguments: {
-                            'sectionId': 2,
-                            'phaseId': 1,
+                            'sectionId': 1,
+                            'phaseId': 0,
                           },
                         );
                       },
@@ -83,21 +78,65 @@ class _ReadSectionOneState extends State<ReadSectionOne> {
                         imagePath: 'assets/readphaseone/readphaseone2.png',
                       ),
                     ),
-                    List_item(
-                      name: 'الكلمة الصحيحة',
-                      imagePath: 'assets/readphaseone/readphaseone3.png',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(
+                          PageKeys.quizScreen,
+                          arguments: {
+                            'sectionId': 2,
+                            'phaseId': 0,
+                          },
+                        );
+                      },
+                      child: List_item(
+                        name: 'الكلمة الصحيحة',
+                        imagePath: 'assets/readphaseone/readphaseone3.png',
+                      ),
                     ),
-                    List_item(
-                      name: 'حروف الجر',
-                      imagePath: 'assets/readphaseone/readphaseone4.png',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(
+                          PageKeys.quizScreen,
+                          arguments: {
+                            'sectionId': 3,
+                            'phaseId': 0,
+                          },
+                        );
+                      },
+                      child: List_item(
+                        name: 'حروف الجر',
+                        imagePath: 'assets/readphaseone/readphaseone4.png',
+                      ),
                     ),
-                    List_item(
-                      name: 'الوعي الصوتي',
-                      imagePath: 'assets/readphaseone/readphaseone5.png',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(
+                          PageKeys.quizScreen,
+                          arguments: {
+                            'sectionId': 4,
+                            'phaseId': 0,
+                          },
+                        );
+                      },
+                      child: List_item(
+                        name: 'الوعي الصوتي',
+                        imagePath: 'assets/readphaseone/readphaseone5.png',
+                      ),
                     ),
-                    List_item(
-                      name: 'تركيب',
-                      imagePath: 'assets/readphaseone/readphaseone6.png',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(
+                          PageKeys.quizScreen,
+                          arguments: {
+                            'sectionId': 5,
+                            'phaseId': 0,
+                          },
+                        );
+                      },
+                      child: List_item(
+                        name: 'تركيب',
+                        imagePath: 'assets/readphaseone/readphaseone6.png',
+                      ),
                     ),
                   ],
                 ),

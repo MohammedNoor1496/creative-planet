@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/controllers/question_controller.dart';
 import 'package:quiz_app/models/Questions.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen_controller.dart';
 
 import '../../../constants.dart';
 import 'option.dart';
 
-class QuestionCard extends StatelessWidget {
+class QuestionCard extends GetView<QuizScreenController> {
   const QuestionCard({
     Key key,
     // it means we have to pass this
@@ -17,7 +18,6 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),
@@ -40,7 +40,7 @@ class QuestionCard extends StatelessWidget {
             (index) => Option(
               index: index,
               text: question.options[index],
-              press: () => _controller.checkAns(question, index),
+              press: () => controller.checkAns(question, index),
             ),
           ),
         ],

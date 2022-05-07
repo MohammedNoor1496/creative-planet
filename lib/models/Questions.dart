@@ -1,5 +1,5 @@
 class Question {
-  final int id, answer, phase, section;
+  final int id, answer, phase, section, score;
   final String question;
   final List<String> options;
   bool hasAnImage = false;
@@ -11,6 +11,7 @@ class Question {
     this.phase,
     this.section,
     this.hasAnImage,
+    this.score,
   });
 }
 
@@ -23,6 +24,7 @@ List<Question> sample_data = [
     phase: 1,
     section: 1,
     hasAnImage: true,
+    score: 2,
   ),
   Question(
     id: 2,
@@ -31,6 +33,7 @@ List<Question> sample_data = [
     answer: 1,
     phase: 1,
     section: 2,
+    score: 2,
   ),
   Question(
     id: 3,
@@ -40,6 +43,7 @@ List<Question> sample_data = [
     answer: 2,
     phase: 1,
     section: 3,
+    score: 2,
   ),
   Question(
     id: 4,
@@ -49,6 +53,7 @@ List<Question> sample_data = [
     answer: 1,
     phase: 1,
     section: 4,
+    score: 2,
   ),
   Question(
     id: 5,
@@ -57,6 +62,7 @@ List<Question> sample_data = [
     answer: 2,
     phase: 1,
     section: 5,
+    score: 2,
   ),
   Question(
     id: 6,
@@ -65,6 +71,7 @@ List<Question> sample_data = [
     answer: 2,
     phase: 1,
     section: 5,
+    score: 2,
   ),
   Question(
     id: 7,
@@ -73,6 +80,7 @@ List<Question> sample_data = [
     answer: 2,
     phase: 1,
     section: 6,
+    score: 2,
   ),
   Question(
     id: 8,
@@ -81,5 +89,6 @@ List<Question> sample_data = [
     answer: 2,
     phase: 1,
     section: 6,
+    score: 2,
   ),
 ];

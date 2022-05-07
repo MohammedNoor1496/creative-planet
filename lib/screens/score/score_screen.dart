@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/controllers/question_controller.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen_controller.dart';
 
-class ScoreScreen extends StatelessWidget {
+class ScoreScreen extends GetView<QuizScreenController> {
   @override
   Widget build(BuildContext context) {
-    QuestionController _qnController = Get.put(QuestionController());
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -25,7 +25,7 @@ class ScoreScreen extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "${_qnController.correctAns * 10}/${_qnController.questions.length * 10}",
+                "${controller.correctAns * 10}/${controller.length * 10}",
                 style: Theme.of(context)
                     .textTheme
                     .headline4

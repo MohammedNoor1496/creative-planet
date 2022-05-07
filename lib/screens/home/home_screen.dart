@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:quiz_app/page/page_keys.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen.dart';
 import 'package:quiz_app/screens/read_section_one/read_section_one.dart';
 
@@ -8,7 +10,7 @@ import '../../store/myStore.dart';
 import '../../utils/scale_util.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView {
   final categories = [
     'أساسيات القراءة',
     'المرحلة الأولى',
@@ -252,9 +254,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed(
-                        ReadSectionOne.path,
-                      );
+                      Get.toNamed(PageKeys.readSectionOne);
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(

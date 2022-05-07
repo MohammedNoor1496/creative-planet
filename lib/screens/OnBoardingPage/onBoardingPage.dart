@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:quiz_app/screens/OnBoardingPage/widgets/button_widget.dart';
 
 import '../../../constants.dart';
 import '../welcome/welcome_screen.dart';
 
-class OnBoardingPage extends StatelessWidget {
+class OnBoardingPage extends GetView {
   const OnBoardingPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) => SafeArea(
@@ -15,7 +16,8 @@ class OnBoardingPage extends StatelessWidget {
               title: 'المعلمة :نعيمة يوسف عوض',
               body:
                   'معلمة مرحلة ابتدائية لمادة اللغة العربية \n مدرسة الإمارات الوطنية مجمع محمد بن زايد \n ماجستير مناهج وطرق تدريس \n حاصلة على جائزة حمدان للأداء التعليمي المتميز \n حاصلة على وسام التميز على مستوى المدارس النموذجية \n حاصلة على جائزة الشارقة فئة المعلم المتميز',
-              image: buildImage('assets/tech.png'),
+              image: buildImage('assets/planets.png'),
+              // image: buildImage('assets/tech.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
