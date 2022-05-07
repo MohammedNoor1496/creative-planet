@@ -27,6 +27,7 @@ class QuizScreenController extends GetxController {
   int sectionId = -1;
   int phaseId = -1;
 
+  RxInt score = RxInt(0);
   // RxBool isAnswered = RxBool(false);
 
   int correctAns;
@@ -83,6 +84,7 @@ class QuizScreenController extends GetxController {
         Audio("assets/audios/success.mp3"),
         showNotification: true,
       );
+      score + 2;
       await Future.delayed(
         Duration(seconds: 2),
         () {

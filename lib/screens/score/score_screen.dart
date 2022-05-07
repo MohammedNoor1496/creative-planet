@@ -24,13 +24,15 @@ class ScoreScreen extends GetView<QuizScreenController> {
                     .copyWith(color: kSecondaryColor),
               ),
               Spacer(),
-              Text(
-                "${controller.correctAns * 10}/${controller.length * 10}",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(color: kSecondaryColor),
-              ),
+              Obx(() {
+                return Text(
+                  "${controller.score}/${QuestionController.p1[controller.phaseId] == null ? "?" : (QuestionController.p1[controller.phaseId][controller.sectionId] == null ? "?" : (QuestionController.p1[controller.phaseId][controller.sectionId].length * 2))}",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(color: kSecondaryColor),
+                );
+              }),
               Spacer(flex: 3),
               Text(
                 "وفقك الله و رعاك",
