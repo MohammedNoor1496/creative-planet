@@ -27,11 +27,11 @@ class QuizScreenController extends GetxController {
   int sectionId = -1;
   int phaseId = -1;
 
-  RxBool isAnswered = RxBool(false);
+  // RxBool isAnswered = RxBool(false);
 
   int correctAns;
 
-  int selectedAns;
+  RxInt selectedAns = RxInt(-1);
 
   int numOfCorrectAns = 0;
 
@@ -44,13 +44,15 @@ class QuizScreenController extends GetxController {
   bool isTimerLocked = true;
 
   void timer() async {
+    print("check timer . . . ");
     if (!isTimerLocked) {
+      print("timer . . . . " + progress.value.toString());
       await Future.delayed(Duration(seconds: 1), () {
         progress++;
         if (progress >= 60) {
           nextQuestion();
-        }else{
-      timer();
+        } else {
+          timer();
         }
       });
     }
@@ -62,25 +64,26 @@ class QuizScreenController extends GetxController {
     pageController.dispose();
   }
 
-  void checkAns(Question question, int selectedIndex) {
+  void checkAns(Question question, int selectedIndex) async {
     // because once user press any option then it will run
-    isAnswered.value = true;
+    // isAnswered.value = true;
+
     correctAns = question.answer;
-    selectedAns = selectedIndex;
+    selectedAns.value = selectedIndex;
     AssetsAudioPlayer _assetsAudioPlayer = AssetsAudioPlayer();
 
-    if (correctAns != selectedAns) {
+    if (correctAns != selectedAns.value) {
       _assetsAudioPlayer.open(
         Audio("assets/audios/error.mp3"),
         showNotification: true,
       );
     }
-    if (correctAns == selectedAns) {
+    if (correctAns == selectedAns.value) {
       _assetsAudioPlayer.open(
         Audio("assets/audios/success.mp3"),
         showNotification: true,
       );
-      Future.delayed(
+      await Future.delayed(
         Duration(seconds: 2),
         () {
           nextQuestion();
@@ -102,12 +105,16 @@ class QuizScreenController extends GetxController {
         length = QuestionController.p1[phaseId][sectionId].length;
       }
     }
-    if (questionNumber.value != length) {
-      isAnswered.value = false;
+    if (questionNumber.value < length) {
+      // isAnswered.value = false;
+      selectedAns.value = -1;
       progress.value = 0;
-      questionNumber++;
-      pageController.nextPage(
-          duration: Duration(milliseconds: 250), curve: Curves.ease);
+      questionNumber.value++;
+      pageController.animateToPage(
+        questionNumber.value,
+        duration: Duration(milliseconds: 600),
+        curve: Curves.linear,
+      );
       timer();
 
       // Reset the counter

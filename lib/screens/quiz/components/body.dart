@@ -9,10 +9,13 @@ import 'progress_bar.dart';
 import 'question_card.dart';
 
 class Body extends GetView<QuizScreenController> {
-
   @override
   Widget build(BuildContext context) {
-    // So that we have acccess our controller
+    // So that we ha ve acccess our controller
+    print("my vars  " +
+        controller.phaseId.toString() +
+        "  -  " +
+        controller.sectionId.toString());
 
     ScaleUtil scU = ScaleUtil(context);
 
@@ -61,12 +64,16 @@ class Body extends GetView<QuizScreenController> {
                       ? Center(
                           child: Text("no qution"),
                         )
-                      : (QuestionController.p1[controller.phaseId][controller.sectionId] == null
+                      : (QuestionController.p1[controller.phaseId]
+                                  [controller.sectionId] ==
+                              null
                           ? Center(
                               child: Text("no qution"),
                             )
                           : (QuestionController
-                                      .p1[controller.phaseId][controller.sectionId].isEmpty ==
+                                      .p1[controller.phaseId]
+                                          [controller.sectionId]
+                                      .isEmpty ==
                                   null
                               ? Center(
                                   child: Text(
@@ -77,11 +84,11 @@ class Body extends GetView<QuizScreenController> {
                                   // Block swipe to next qn
                                   physics: NeverScrollableScrollPhysics(),
                                   controller: controller.pageController,
-                                  onPageChanged:(index){
-                                    controller.questionNumber.value = index;
-                                  },
+
                                   children: QuestionController
-                                      .p1[controller.phaseId][controller.sectionId].entries
+                                      .p1[controller.phaseId]
+                                          [controller.sectionId]
+                                      .entries
                                       .map(
                                         (e) => QuestionCard(
                                           question: e.value,

@@ -13,8 +13,7 @@ class ProgressBar extends GetView<QuizScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.isTimerLocked = false;
-    controller.timer();
+
     return Obx(() {
       return Container(
         width: double.infinity,
@@ -30,7 +29,7 @@ class ProgressBar extends GetView<QuizScreenController> {
             LayoutBuilder(
               builder: (context, constraints) => Container(
                 // from 0 to 1 it takes 60s
-                width: constraints.maxWidth * controller.progress.value,
+                width:( constraints.maxWidth * controller.progress.value) / 100,
                 decoration: BoxDecoration(
                   gradient: kPrimaryGradient,
                   borderRadius: BorderRadius.circular(50),
