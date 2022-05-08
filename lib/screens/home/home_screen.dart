@@ -275,22 +275,27 @@ class HomeScreen extends GetView {
                       ),
                     ),
                   ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.white70, width: 1),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    elevation: 25,
-                    shadowColor: Colors.blue,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.green[300],
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(PageKeys.readSectionTwo);
+                    },
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.white70, width: 1),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      alignment: Alignment.center,
-                      width: scU.scale(170),
-                      height: scU.scale(170),
-                      child: const Text("المرحلة الثانية"),
+                      elevation: 25,
+                      shadowColor: Colors.blue,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.green[300],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        alignment: Alignment.center,
+                        width: scU.scale(170),
+                        height: scU.scale(170),
+                        child: const Text("المرحلة الثانية"),
+                      ),
                     ),
                   ),
                   Card(

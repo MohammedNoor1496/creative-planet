@@ -6,6 +6,7 @@ import 'package:quiz_app/screens/quiz/quiz_screen.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen_binding.dart';
 import 'package:quiz_app/screens/read_section_one/read_section_one.dart';
 import 'package:quiz_app/screens/read_section_one/read_section_one_binding.dart';
+import 'package:quiz_app/screens/read_section_two/read_section_two.dart';
 
 class Pages {
   static List<GetPage> pages = [
@@ -15,13 +16,16 @@ class Pages {
         binding: QuizScreenBindings(),
         middlewares: [QuizMiddelware()]),
     GetPage(
-      name: PageKeys.readSectionOne,
-      page: () => ReadSectionOne(),
-      binding: ReadSectionOneBindings()
-    ),
+        name: PageKeys.readSectionOne,
+        page: () => ReadSectionOne(),
+        binding: ReadSectionOneBindings()),
     GetPage(
       name: PageKeys.onBording,
       page: () => OnBoardingPage(),
+    ),
+    GetPage(
+      name: PageKeys.readSectionTwo,
+      page: () => ReadSectionTwo(),
     ),
   ];
 }
