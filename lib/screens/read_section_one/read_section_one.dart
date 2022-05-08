@@ -30,15 +30,33 @@ class ReadSectionOne extends GetView {
               children: [
                 Column(
                   children: [
-                    List_item_Double(
-                      imagePath: 'assets/readphaseone/readphaseone7.png',
-                      firstname: 'تحليل',
-                      secondname: 'الصوت القصير',
+                    GestureDetector(
+                      onTap: () {
+                        quizScreenController.sectionId = 6;
+                        quizScreenController.phaseId = 0;
+                        Get.toNamed(
+                          PageKeys.quizScreen,
+                        );
+                      },
+                      child: List_item_Double(
+                        imagePath: 'assets/readphaseone/readphaseone7.png',
+                        firstname: 'تحليل',
+                        secondname: 'الصوت القصير',
+                      ),
                     ),
-                    List_item_Double(
-                      imagePath: 'assets/readphaseone/readphaseone8.png',
-                      firstname: 'الصوت الطويل',
-                      secondname: 'المقطع الساكن',
+                    GestureDetector(
+                      onTap: () {
+                        quizScreenController.sectionId = 7;
+                        quizScreenController.phaseId = 0;
+                        Get.toNamed(
+                          PageKeys.quizScreen,
+                        );
+                      },
+                      child: List_item_Double(
+                        imagePath: 'assets/readphaseone/readphaseone8.png',
+                        firstname: 'الصوت الطويل',
+                        secondname: 'المقطع الساكن',
+                      ),
                     ),
                     List_item(
                       name: 'إختيار الكلمة الصحيحه',
@@ -65,12 +83,14 @@ class ReadSectionOne extends GetView {
                     ),
                     GestureDetector(
                       onTap: () {
+                        quizScreenController.sectionId = 1;
+                        quizScreenController.phaseId = 0;
                         Get.toNamed(
                           PageKeys.quizScreen,
-                          arguments: {
-                            'sectionId': 1,
-                            'phaseId': 0,
-                          },
+                          // arguments: {
+                          //   'sectionId': 1,
+                          //   'phaseId': 0,
+                          // },
                         );
                       },
                       child: List_item(
@@ -80,12 +100,14 @@ class ReadSectionOne extends GetView {
                     ),
                     GestureDetector(
                       onTap: () {
+                        quizScreenController.sectionId = 2;
+                        quizScreenController.phaseId = 0;
                         Get.toNamed(
                           PageKeys.quizScreen,
-                          arguments: {
-                            'sectionId': 2,
-                            'phaseId': 0,
-                          },
+                          // arguments: {
+                          //   'sectionId': 2,
+                          //   'phaseId': 0,
+                          // },
                         );
                       },
                       child: List_item(
@@ -95,12 +117,14 @@ class ReadSectionOne extends GetView {
                     ),
                     GestureDetector(
                       onTap: () {
+                        quizScreenController.sectionId = 3;
+                        quizScreenController.phaseId = 0;
                         Get.toNamed(
                           PageKeys.quizScreen,
-                          arguments: {
-                            'sectionId': 3,
-                            'phaseId': 0,
-                          },
+                          // arguments: {
+                          //   'sectionId': 3,
+                          //   'phaseId': 0,
+                          // },
                         );
                       },
                       child: List_item(
@@ -110,12 +134,14 @@ class ReadSectionOne extends GetView {
                     ),
                     GestureDetector(
                       onTap: () {
+                        quizScreenController.sectionId = 4;
+                        quizScreenController.phaseId = 0;
                         Get.toNamed(
                           PageKeys.quizScreen,
-                          arguments: {
-                            'sectionId': 4,
-                            'phaseId': 0,
-                          },
+                          // arguments: {
+                          //   'sectionId': 4,
+                          //   'phaseId': 0,
+                          // },
                         );
                       },
                       child: List_item(
@@ -125,12 +151,14 @@ class ReadSectionOne extends GetView {
                     ),
                     GestureDetector(
                       onTap: () {
+                        quizScreenController.sectionId = 5;
+                        quizScreenController.phaseId = 0;
                         Get.toNamed(
                           PageKeys.quizScreen,
-                          arguments: {
-                            'sectionId': 5,
-                            'phaseId': 0,
-                          },
+                          // arguments: {
+                          //   'sectionId': 5,
+                          //   'phaseId': 0,
+                          // },
                         );
                       },
                       child: List_item(

@@ -90,32 +90,41 @@ class QuestionController extends GetxController
     Map<int, Question> s4 = {
       5: Question(
         id: 5,
-        question:
-            "اختر الكلمة التي تُكمل المعنى في جُملة: ذَهَبَت أُمي ...........سوقِ الخُضار",
-        options: ['مِنْ', 'إلى', 'في'],
-        answer: 1,
+        question: " اختر صوت الحرف الأول المختلف كِتاب – كَباب – كِلاب",
+        options: ['كَـ', 'كِـ', 'كِـ'],
+        answer: 2,
         phase: 1,
-        section: 5,
+        section: 4,
+        score: 2,
+      ),
+      6: Question(
+        id: 6,
+        question:
+            " 1- اختر صوت الحرف الأول المشترك في الكلمات غُصْن   - غُروب – غُيوم",
+        options: ['غَـ', 'غِـ', 'غُـ'],
+        answer: 2,
+        phase: 1,
+        section: 4,
         score: 2,
       ),
     };
     Map<int, Question> s5 = {
       6: Question(
         id: 6,
-        question: " اختر صوت الحرف الأول المختلف كِتاب – كَباب – كِلاب",
-        options: ['كَـ', 'كِـ', 'كِـ'],
+        question:
+            "اختر الكلمة التي تتكون من أصوات الحروف الآتية  د   - ع  -و   -م",
+        options: ['دَمْعَةٌ', 'دُموعٌ', 'دَمْعٌ'],
         answer: 2,
         phase: 1,
-        section: 6,
+        section: 7,
         score: 2,
       ),
     };
     Map<int, Question> s6 = {
       7: Question(
         id: 7,
-        question:
-            "اختر الكلمة التي تتكون من أصوات الحروف الآتية  د   - ع  -و   -م",
-        options: ['دَمْعَةٌ', 'دُموعٌ', 'دَمْعٌ'],
+        question: "اختر التحليل الصحيح لكلمة ( مُدَرِّبٌ)",
+        options: ['مُدَ / رِ /بٌ', 'مُ / دَ / رِبٌ', 'مُ / دَرْ / رِ / بٌ'],
         answer: 2,
         phase: 1,
         section: 7,
