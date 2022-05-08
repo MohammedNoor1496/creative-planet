@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/controllers/question_controller.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quiz_app/page/page_keys.dart';
 import 'package:quiz_app/screens/quiz/quiz_screen_controller.dart';
+import 'package:quiz_app/screens/read_section_one/read_section_one.dart';
 
 class ScoreScreen extends GetView<QuizScreenController> {
   @override
@@ -40,6 +42,17 @@ class ScoreScreen extends GetView<QuizScreenController> {
                     .textTheme
                     .headline3
                     .copyWith(color: kSecondaryColor),
+              ),
+              Spacer(flex: 3),
+              ElevatedButton(
+                onPressed: () {
+                  Get.toNamed(
+                    PageKeys.readSectionOne,
+                  );
+                },
+                child: Text(
+                  'الرجوع للصفحه الرئيسية',
+                ),
               ),
               Spacer(flex: 3),
             ],
