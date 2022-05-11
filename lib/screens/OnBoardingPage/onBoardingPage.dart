@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:quiz_app/screens/OnBoardingPage/widgets/button_widget.dart';
+import 'package:quiz_app/screens/OnBoardingPage/widgets/target_item.dart';
 
 import '../../../constants.dart';
 import '../welcome/welcome_screen.dart';
@@ -13,24 +14,18 @@ class OnBoardingPage extends GetView {
         child: IntroductionScreen(
           pages: [
             PageViewModel(
-              title: 'المعلمة :نعيمة يوسف عوض',
-              body:
-                  'معلمة مرحلة ابتدائية لمادة اللغة العربية \n مدرسة الإمارات الوطنية مجمع محمد بن زايد \n ماجستير مناهج وطرق تدريس \n حاصلة على جائزة حمدان للأداء التعليمي المتميز \n حاصلة على وسام التميز على مستوى المدارس النموذجية \n حاصلة على جائزة الشارقة فئة المعلم المتميز',
-              image: buildImage('assets/planets.png'),
-              // image: buildImage('assets/tech.png'),
-              decoration: getPageDecoration(),
-            ),
-            PageViewModel(
               title: 'جامعة السودان للعلوم والتكنولوجيا',
               body:
-                  'كلية الدراسات العليا \n برنامج كواكب الإبداع لمهارات اللغة العربية لطلاب الصف الرابع الابتدائي \n المشرفون \n د. عاتقة يوسف المبارك \n أستاذ مشارك  قسم التربية المتكاملة بالحاسوب. كلية التربية \n منسق التدريب الالكتروني. قسم التدريب والتربية العملية جامعة السودان للعلوم والتكنولوجيا – مشرف رئيس \n د. رانية الطاهر عبود \n  أستاذ مساعد التربية المتكاملة بالحاسوب',
+                  'كلية الدراسات العليا \n برنامج كواكب الإبداع لمهارات اللغة العربية لطلاب الصف الرابع الابتدائي \nالمعلمة :نعيمة يوسف عوض',
               image: buildImage('assets/uni.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'انطلق عزيزي الطالب لاكتشاف برنامج كواكب الإبداع ',
-              body: 'هيا',
-              image: buildImage('assets/planets.png'),
+              title: 'المعلمة :نعيمة يوسف عوض',
+              body:
+                  'معلمة مرحلة ابتدائية لمادة اللغة العربية \n مدرسة الإمارات الوطنية مجمع محمد بن زايد \n ماجستير مناهج وطرق تدريس \n حاصلة على جائزة حمدان للأداء التعليمي المتميز \n حاصلة على وسام التميز على مستوى المدارس النموذجية \n حاصلة على جائزة الشارقة فئة المعلم المتميز \n المشرفون \n د. عاتقة يوسف المبارك\n أستاذ مشارك  قسم التربية المتكاملة بالحاسوب. كلية التربية\n منسق التدريب الالكتروني. قسم التدريب والتربية العملية\n جامعة السودان للعلوم والتكنولوجيا – مشرف رئيس\n atikaa5@hotmail.com\n د. رانية الطاهر عبود            \n       أستاذ مساعد التربية المتكاملة بالحاسوب\n raniaeltahir2@gmail.com  ',
+              // image: buildImage('assets/planets.png'),
+              image: buildImage('assets/tech.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -42,8 +37,48 @@ class OnBoardingPage extends GetView {
             ),
             PageViewModel(
               title: 'أهداف البرنامج ',
-              body:
-                  'عزيزي الطالب بعد إكمالك هذا البرنامج ستكون قادراً على: \n أن تقرأ الكلمات والجمل قراءة صحيحة بدون أخطاء. \n أن تفهم المقروء بصورة صحيحة. \n أن تجيب عن أسئلة الفهم والاستيعاب بصورة صحيحة. \n أن تكتب كلمات وجملاً بصورة صحيحة. \n أن تميز المهارات الإملائية والنحوية بشكل فاعل. \n أن تكتسب مفردات وتراكيب جديدة. \n أن توظف المفردات والتراكيب في جمل جديدة. \n أن تستنبط الأفكار العامة من النصوص  القرائية. \n أن تبدي رأيك في المواقف. \n أن تنظم أفكارك لتكتب موضوعاً تعبيرياً متكامل الأركان.',
+              // body:
+              //     'عزيزي الطالب بعد إكمالك هذا البرنامج ستكون قادراً على: \n أن تقرأ الكلمات والجمل قراءة صحيحة بدون أخطاء. \n أن تفهم المقروء بصورة صحيحة. \n أن تجيب عن أسئلة الفهم والاستيعاب بصورة صحيحة. \n أن تكتب كلمات وجملاً بصورة صحيحة. \n أن تميز المهارات الإملائية والنحوية بشكل فاعل. \n أن تكتسب مفردات وتراكيب جديدة. \n أن توظف المفردات والتراكيب في جمل جديدة. \n أن تستنبط الأفكار العامة من النصوص  القرائية. \n أن تبدي رأيك في المواقف. \n أن تنظم أفكارك لتكتب موضوعاً تعبيرياً متكامل الأركان.',
+              bodyWidget: Column(
+                // crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TargetWidget(
+                    targetText:
+                        ".أن تقرأ الكلمات والجمل قراءة صحيحة بدون أخطاء",
+                  ),
+                  TargetWidget(
+                    targetText: ".أن تفهم المقروء بصورة صحيحة",
+                  ),
+                  TargetWidget(
+                    targetText:
+                        ".أن تجيب عن أسئلة الفهم والاستيعاب بصورة صحيحة",
+                  ),
+                  TargetWidget(
+                    targetText: ".أن تكتب كلمات وجملاً بصورة صحيحة",
+                  ),
+                  TargetWidget(
+                    targetText:
+                        ".أن تميز المهارات الإملائية والنحوية بشكل فاعل",
+                  ),
+                  TargetWidget(
+                    targetText: ".أن تكتسب مفردات وتراكيب جديدة",
+                  ),
+                  TargetWidget(
+                    targetText: ".أن توظف المفردات والتراكيب في جمل جديدة",
+                  ),
+                  TargetWidget(
+                    targetText:
+                        " .أن تستنبط الأفكار العامة من النصوص  القرائية",
+                  ),
+                  TargetWidget(
+                    targetText: ".أن تبدي رأيك في المواقف",
+                  ),
+                  TargetWidget(
+                    targetText:
+                        ".أن تنظم أفكارك لتكتب موضوعاً تعبيرياً متكامل الأركان",
+                  ),
+                ],
+              ),
               image: buildImage('assets/goal.png'),
               decoration: getPageDecoration(),
             ),
@@ -51,18 +86,26 @@ class OnBoardingPage extends GetView {
               title: 'عمل البرنامج',
               body:
                   'عزيزي الطالب البرنامج سهل الاستخدام  يعمل على جهاز الايباد على أندرويد نسخة 11 بإمكانك العمل بمفردك  بكل سهولة ويسر سيستغرق منك العمل على كل مستوى ما بين 30 -45 دقيقة في اليوم مرتان في الأسبوع خلال الفصل الدراسي. \n  ستبدأ عزيزي الطالب أولاً بأساسيات القراءة وهي عبارة عن ثلاث مراحل وكلما انتهيت من مرحلة وأتقنت ما فيها ستنتقل للمرحلة الثانية وهكذا حتى تنتهي من المراحل الثلاث سيكون هناك تقييم قرائي على سجلات القراءة بعد كل مرحلة وسيتم تقديم تغذية راجعة لك بعد كل مستوى. \n ثم ستنتقل لمرحلة الفهم والاستيعاب وهي عبارة عن ثلاث مستويات اقرأ النصوص جيداً ثم أجب عن الأسئلة وهناك أسئلة مطلوب أن تكتب الإجابات، وكلما انتهيت من مستوى ستنتقل إلى المستوى الذي يليه حتي تنتهي من المستويات. \n ثم ستنتقل إلى مرحلة تدريبات الكتابة وهي عبارة عن ثلاث مراحل وهناك أسئلة ستقوم بقراءة المطلوب من كل سؤال ثم تكتب الإجابات علي كل سؤال،  وكلما انتهيت من مرحلة ستنتقل إلى المرحلة التي تليها وهكذا حتى تنتهي من المراحل. \n  للتأكد من صحة إجاباتك بإمكانك الانتقال إلى الإجابات النموذجية. \n بعد الانتهاء من جميع تدريبات البرنامج ستقوم بأداء اختبار ختامي.',
-              footer: ButtonWidget(
+              image: buildImage('assets/howtowork.png'),
+              decoration: getPageDecoration(),
+            ),
+            PageViewModel(
+              title: 'انطلق عزيزي الطالب لاكتشاف برنامج كواكب الإبداع ',
+              // body: 'هيا',
+              bodyWidget: ButtonWidget(
                 text: 'هيا لنبدأ',
                 onClicked: () => goToHome(context),
               ),
-              image: buildImage('assets/howtowork.png'),
+              image: buildImage('assets/planets.png'),
               decoration: getPageDecoration(),
             ),
           ],
           done: Text('متابعة', style: TextStyle(fontWeight: FontWeight.w600)),
           onDone: () => goToHome(context),
-          showSkipButton: true,
-          skip: Text('تخطي'),
+          // showSkipButton: true,
+          showBackButton: true,
+          back: Icon(Icons.arrow_back),
+          // skip: Text('تخطي'),
           onSkip: () => goToHome(context),
           next: Icon(Icons.arrow_forward),
           dotsDecorator: getDotDecoration(),
@@ -84,11 +127,11 @@ class OnBoardingPage extends GetView {
       );
 
   Widget buildImage(String path) =>
-      Center(child: Image.asset(path, width: 350));
+      Center(child: Image.asset(path, width: 200));
 
   DotsDecorator getDotDecoration() => DotsDecorator(
         color: Color(0xFFBDBDBD),
-        //activeColor: Colors.orange,
+        activeColor: Colors.orange,
         size: Size(10, 10),
         activeSize: Size(22, 10),
         activeShape: RoundedRectangleBorder(
@@ -98,9 +141,10 @@ class OnBoardingPage extends GetView {
 
   PageDecoration getPageDecoration() => PageDecoration(
         titleTextStyle: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-        bodyTextStyle: TextStyle(fontSize: 20),
+        bodyTextStyle: TextStyle(fontSize: 25),
         bodyPadding: EdgeInsets.all(16).copyWith(bottom: 0),
         imagePadding: EdgeInsets.all(24),
         pageColor: kSecondaryColor,
+        bodyFlex: 3,
       );
 }
